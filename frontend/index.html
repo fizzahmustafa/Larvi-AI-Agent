@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Larvi - AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">L</div>
+
+                <div>
+                    <h1>Larvi</h1>
+                    <p>AI Assistant</p>
+                </div>
+            </div>
+
+            <button class="new-chat" onclick="newChat()">
+                + New Chat
+            </button>
+
+            <div class="sidebar-section">
+                <p class="section-title">Capabilities</p>
+
+                <div class="capability">
+                    <span>✉</span>
+                    <div>
+                        <strong>Email</strong>
+                        <small>Gmail management</small>
+                    </div>
+                </div>
+
+                <div class="capability">
+                    <span>▣</span>
+                    <div>
+                        <strong>Calendar</strong>
+                        <small>Google Calendar</small>
+                    </div>
+                </div>
+
+                <div class="capability">
+                    <span>✦</span>
+                    <div>
+                        <strong>Gemini AI</strong>
+                        <small>Intelligent assistance</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span>Larvi is online</span>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <main class="chat-container">
+
+            <header class="chat-header">
+
+                <div class="mobile-logo">
+                    <div class="logo-icon">L</div>
+                    <strong>Larvi</strong>
+                </div>
+
+                <div class="header-info">
+                    <h2>Larvi Assistant</h2>
+                    <p>Your autonomous email & calendar assistant</p>
+                </div>
+
+                <div class="online">
+                    <span></span>
+                    Online
+                </div>
+
+            </header>
+
+
+            <section id="chatBox" class="chat-box">
+
+                <div class="welcome">
+
+                    <div class="welcome-icon">
+                        L
+                    </div>
+
+                    <h2>How can I help you?</h2>
+
+                    <p>
+                        I can manage your emails, calendar,
+                        and help you organize your day.
+                    </p>
+
+                    <div class="suggestions">
+
+                        <button onclick="sendSuggestion('Show me my latest emails')">
+                            <span>✉</span>
+                            Show my latest emails
+                        </button>
+
+                        <button onclick="sendSuggestion('Show my calendar')">
+                            <span>▣</span>
+                            Show my calendar
+                        </button>
+
+                        <button onclick="sendSuggestion('Summarize my latest email')">
+                            <span>✦</span>
+                            Summarize an email
+                        </button>
+
+                        <button onclick="sendSuggestion('Search my calendar for Larvi')">
+                            <span>⌕</span>
+                            Search calendar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="typing" id="typing">
+                <span></span>
+                <span></span>
+                <span></span>
+                Larvi is thinking...
+            </div>
+
+
+            <footer class="input-area">
+
+                <div class="input-wrapper">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="Message Larvi..."
+                        rows="1"
+                        onkeydown="handleKey(event)"
+                    ></textarea>
+
+                    <button
+                        id="sendButton"
+                        onclick="sendMessage()"
+                        aria-label="Send message"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="disclaimer">
+                    Larvi can make mistakes. Check important actions before confirming.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
